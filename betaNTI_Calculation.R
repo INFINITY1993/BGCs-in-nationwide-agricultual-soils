@@ -41,5 +41,5 @@ bNTI=bNTIn.p(comm=comm, dis=pd.big, nworker = nworker, memo.size.GB = memory.G,
              special.method = "MNTD")
 
 bnit_results=bNTI$index
-write.csv(bnit_results,file="bnit_results_bNTI_1.csv")
+write.csv(bnit_results,file="bnit_results_bNTI.csv")
 
