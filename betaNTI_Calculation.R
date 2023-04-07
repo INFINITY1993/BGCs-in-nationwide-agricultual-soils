@@ -16,7 +16,7 @@ spid.check=match.name(cn.list=list(comm=comm),tree.list=list(tree=tree))
 comm=spid.check$comm
 tree=spid.check$tree
 
-#2# key parameter setting
+#3# key parameter setting
 rand.time=1000  #randomization time, 1000 is usually enough. For example test, you may set as 100 or less to save time.
 nworker=26 #nworker is thread number for parallel computing, which depends on the CPU core number of your computer.
 memory.G=400 #to set the memory size as you need (but should be less than the available space in your hard disk), so that calculation of large tree will not be limited by physical memory. unit is Gb.
@@ -24,7 +24,7 @@ memory.G=400 #to set the memory size as you need (but should be less than the av
 #the folder to save the output. 
 save.wd="/folder/to/save/the/output"
 
-#3# calculate pairwise phylogenetic distance matrix.
+#4# calculate pairwise phylogenetic distance matrix.
 #since microbial community data usually has a large number of species (OTUs or ASVs), we use "big.matrix" in R package "bigmemory" to handle the large phylogenetic distance matrix. 
 setwd(save.wd)
   pd.big=iCAMP::pdist.big(tree = tree, wd=save.wd, nworker = nworker, memory.G = memory.G, output = TRUE)
