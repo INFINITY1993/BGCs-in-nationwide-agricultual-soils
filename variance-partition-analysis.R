@@ -7,7 +7,7 @@ library(SoDA)
 
 #VPA分析就是采用的partial RDA原理，两者计算的结果是一致的
 
-
+#读取文件
 gcf_abundance <- read.csv("gcf_abundance.csv",header = T,row.names = 1)
 environment_factor <- read.csv("environment.csv",header = T,row.names = 1)
 taxa <- read.csv("16s_phylum_abundance.csv",header = T,row.names = 1)
@@ -74,7 +74,6 @@ plot(
 
 
 #显著性检验
-
 formula_soil <- formula(clfs_surface_s.h ~ as.matrix(df_soil) +Condition(as.matrix(df_geo))+Condition(as.matrix(df_taxa)))
 formula_pcnm_clim <- formula(clfs_surface_s.h ~ as.matrix(df_geo) +Condition(as.matrix(df_soil))+Condition(as.matrix(df_taxa)))
 formula_taxa <- formula(clfs_surface_s.h ~ as.matrix(df_taxa) +Condition(as.matrix(df_geo))+Condition(as.matrix(df_soil)))
