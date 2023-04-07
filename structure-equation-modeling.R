@@ -1,11 +1,12 @@
 library(lavaan)
 
+#read file
 sem_data <- read.csv("SEM_analysis_data.csv",header = T,row.names = 1)
 
+#data normalization，mean value 0，standard deviation 1
+sem_data.scaled<-data.frame(scale(sem_data,center = F)) 
 
-sem_data.scaled<-data.frame(scale(sem_data,center = F)) #数据标准化，均值为0，标准差为1
-
-
+#model construction
 model <- '
 # regressions
 
