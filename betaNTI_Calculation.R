@@ -1,4 +1,6 @@
-
+#This script is modified from Ning et al., 2020, Nature Communication. If you use this method for beta-NTI calculation, please cite:
+#Ning D, Yuan M, Wu L, Zhang Y, Guo X, Zhou X, Yang Y, Arkin AP, Firestone MK, and Zhou J. 2020. A quantitative framework reveals ecological drivers of grassland microbial community assembly in response to warming. Nature Communications 11, 4717. 
+#https://doi.org/10.1038/s41467-020-18560-z.
 
 #1# load R packages and data
 library(iCAMP)
