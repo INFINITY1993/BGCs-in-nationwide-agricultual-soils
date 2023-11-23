@@ -10,16 +10,16 @@ sem_data.scaled<-data.frame(scale(sem_data,center = F))
 model <- '
 # regressions
 
-PC1~pH+NO3+MC+MAT
-BGC_richness~PC1
-BGC_abundance~MAT+MAP+pH+PC1
+MiCo~pH+NO3+MAT+MC+AP
+BGC.Co~pH+MAP+MiCo
+BGC_D~MiCo
 '
 Fit <- lavaan::sem(model, data=sem_data.scaled)
 summary(Fit, rsquare=T, standardized=T,fit.measures=TRUE)
-residuals(Fit, type="cor")
+
 modificationIndices(Fit,standardized=F)
 
-fitmeasures(Fit,fit.measures="all")
+fitMeasures(Fit,c("chisq","df","gfi","agfi","cfi","nfi","ifi","srmr","rmsea"))
 
 
 #SEM plot
